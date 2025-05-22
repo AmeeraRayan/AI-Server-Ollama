@@ -17,7 +17,7 @@ async def generate_outfit(request: Request):
     data = await request.json()
     prompt = data.get("prompt", "")
     start_time=time.time()
-    full_prompt = f"Give me exactly 3 outfit ideas for a girl for: {prompt}. Each outfit must be clearly numbered and described briefly. Format: 1. ... , 2. ... , 3. ... Please make sure the suggestions are stylish, practical, and easy to visualize."
+    full_prompt = f"Give me exactly 3 outfit ideas for: {prompt}. Format: 1. ... , 2. ... , 3. ... "
 
     try:
         output = subprocess.check_output([
