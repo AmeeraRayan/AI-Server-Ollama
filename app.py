@@ -1,4 +1,17 @@
 import requests
+from fastapi import FastAPI, Request
+from fastapi.middleware.cors import CORSMiddleware
+import subprocess
+
+app = FastAPI()
+
+# Enable CORS so the UI EC2 can call this server
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # You can restrict later
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.post("/generate")
 async def generate_outfit(request: Request):
