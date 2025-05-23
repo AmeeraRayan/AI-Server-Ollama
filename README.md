@@ -94,6 +94,20 @@ sudo systemctl status ai-server.service
 
 ---
 
+## Testing with Curl
+```
+
+During development, we used curl to manually test the FastAPI /generate endpoint and verify correct communication with the Ollama model.
+
+Here’s an example command:
+
+```bash
+curl -X POST http://<AI_SERVER_IP>:8000/generate \
+  -H "Content-Type: application/json" \
+  -d '{"prompt": "What should I wear for a summer picnic?"}'
+
+``` 
+---
 ## License
 
 MIT
