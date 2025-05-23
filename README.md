@@ -106,7 +106,12 @@ curl -X POST http://<AI_SERVER_IP>:8000/generate \
   -H "Content-Type: application/json" \
   -d '{"prompt": "What should I wear for a summer picnic?"}'
 
-``` 
+```
+This helped ensure that:
+ • The prompt was correctly passed from the Flask app to the AI server.
+ • The AI server successfully forwarded the prompt to Ollama (e.g., tinyllama).
+ • A list of 3 outfit suggestions was returned as expected.
+
 ---
 ## License
 
